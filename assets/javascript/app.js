@@ -91,17 +91,17 @@ $(document).ready(function() {
         var firstTimeConverted = moment(train.firstTime, "HH:mm").subtract(1, "years");
         var currentTime = moment();
 
-            console.log('current:', currentTime.format("HH:mm"));
+        console.log('current:', currentTime.format("HH:mm"));
 
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
 
-            console.log(diffTime);
+        console.log(diffTime);
 
         var tRemainder = diffTime % train.frequency;
         trainArrival.minutesAway = train.frequency - tRemainder;
         trainArrival.nextArrival = moment().add(trainArrival.minutesAway, "minutes");
 
-            console.log (train.name, 'next arrival', trainArrival);
+        console.log (train.name, 'next arrival', trainArrival);
 
         return trainArrival;
     
